@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
 using SQFramework.Spring;
 using SQFramework.Data.Pagging;
@@ -16,6 +13,9 @@ namespace LojaProduto.Services.Spec.Services
     {
         [OperationContract]
         byte[] ExportReportCategoria(ReportViewerHelper.ReportType reportType, string orderProperty, bool orderAscending);
+
+        [OperationContract]
+        DTOProduto AlterarCodigoBarra(int id, string codigoBarra);
 
         [OperationContract]
         DTOProduto SalvarProduto(DTOProduto dto);

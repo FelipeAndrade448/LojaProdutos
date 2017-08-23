@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using SQFramework.Spring;
-using SQFramework.Spring.Domain;
 using SQFramework.Data;
 using SQFramework.Data.Pagging;
-using LojaProduto.Services.Spec.DataTransferObjects;
 
 namespace LojaProduto.Integration.Spec
 {

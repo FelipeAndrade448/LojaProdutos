@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SQFramework.Spring.Domain;
+﻿using SQFramework.Spring.Domain;
 using LojaProduto.Integration.Spec;
 
 namespace LojaProduto.Domain.Entities

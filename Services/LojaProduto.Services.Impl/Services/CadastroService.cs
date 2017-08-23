@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ServiceModel;
 using SQFramework.Core;
 using SQFramework.Data.Pagging;
@@ -23,6 +21,21 @@ namespace LojaProduto.Services.Impl.Services
             var items = ListarCategorias(0, int.MaxValue, orderProperty, orderAscending);
 
             return ReportViewerHelper.ExportReport(reportType, @"Reports\Categoria.rdlc", items);
+        }
+
+        [Transaction(TransactionPropagation.Required)]
+        public DTOProduto AlterarCodigoBarra(int idProduto, string codigoBarra)
+        {
+            if (String.IsNullOrEmpty(codigoBarra))
+                throw new Exception("Codigo de Barra inválido");
+
+            var produto = Produto.GetRepository().Get(idProduto);
+            produto.CodigoBarra = codigoBarra;
+
+            if (produto.Id > 0)
+                return SalvarProduto(produto.Transform<DTOProduto>());
+            else
+                throw new Exception("Produto Invalido");
         }
 
         [Transaction(TransactionPropagation.Required)]

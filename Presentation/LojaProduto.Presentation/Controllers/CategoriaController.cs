@@ -1,12 +1,7 @@
 ﻿using LojaProduto.Presentation.Controllers.Base;
 using LojaProduto.Services.Spec.DataTransferObjects;
-using SQFramework.Core;
-using SQFramework.Web.Mvc;
-using SQFramework.Web.Mvc.Extensions;
-using SQFramework.Web.Mvc.Filters;
 using SQFramework.Web.Mvc.Report;
 using System;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace LojaProduto.Presentation.Controllers

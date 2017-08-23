@@ -11,8 +11,8 @@
         <property name="dataFabricacao" column="DataFabricacao" type="DateTime" access="field" not-null="true" />
         <property name="dataVencimento" column="DataVencimento" type="DateTime" access="field" not-null="true" />
         <property name="precoProduto" column="PrecoProduto" type="decimal" access="field" not-null="true" />
-        <property name="quantidadeEmEstoque" column="QuantidadeEmEstoque" type="int" access="field" not-null="true" />
-
+        <property name="quantidadeEmEstoque" column="ProdutoEmEstoque" type="int" access="field" not-null="true" />
+        <property name="codigoBarra" column="CodigoBarra" type="string" access="field" not-null="true" length="50" />
         <many-to-one name="categoria" column="CategoriaId" access="field" class="Categoria" not-null="true" />
         <many-to-one name="fornecedor" column="FornecedorId" access="field" class="Fornecedor" not-null="true" />
 

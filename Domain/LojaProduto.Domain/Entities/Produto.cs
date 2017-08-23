@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using SQFramework.Spring.Domain;
 using LojaProduto.Integration.Spec;
 
@@ -26,6 +24,7 @@ namespace LojaProduto.Domain.Entities
         protected DateTime dataVencimento;
         protected decimal precoProduto;
         protected int quantidadeEmEstoque;
+        protected string codigoBarra;
 
         protected Categoria categoria;
         protected Fornecedor fornecedor;
@@ -39,7 +38,7 @@ namespace LojaProduto.Domain.Entities
         public virtual DateTime DataVencimento { get { return dataVencimento; } set { dataVencimento = value; } }
         public virtual decimal PrecoProduto { get { return precoProduto; } set { precoProduto = value; } }
         public virtual int QuantidadeEmEstoque { get { return quantidadeEmEstoque; } set { quantidadeEmEstoque = value; } }
-
+        public virtual string CodigoBarra { get { return codigoBarra; } set { codigoBarra = value; } }
         public virtual Categoria Categoria { get { return categoria; } }
         public virtual Fornecedor Fornecedor { get { return fornecedor; } }
 

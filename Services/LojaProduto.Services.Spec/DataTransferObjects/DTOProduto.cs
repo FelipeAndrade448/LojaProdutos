@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
 
 namespace LojaProduto.Services.Spec.DataTransferObjects
 {
@@ -32,6 +28,9 @@ namespace LojaProduto.Services.Spec.DataTransferObjects
 
         [DataMember(), Required(), Display(Name = "Quantidade")]
         public int QuantidadeEmEstoque { get; set; }
+
+        [DataMember(), Required(), StringLength(50), Display(Name = "Codigo de Barras")]
+        public string CodigoBarra { get; set; }
 
         [DataMember(), Required(), Display(Name = "Categoria")]
         public DTOCategoria Categoria { get; set; }

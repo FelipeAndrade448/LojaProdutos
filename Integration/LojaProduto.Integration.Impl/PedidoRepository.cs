@@ -1,8 +1,6 @@
 ﻿using NHibernate.Criterion;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using LojaProduto.Domain.Entities;
 using LojaProduto.Integration.Spec;
 using SQFramework.Data.Pagging;

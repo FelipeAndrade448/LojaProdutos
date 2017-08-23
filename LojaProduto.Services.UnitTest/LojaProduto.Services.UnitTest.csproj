@@ -74,6 +74,8 @@
     <Compile Include="Produto\EstoqueSuficienteUnitTest.cs" />
     <Compile Include="Produto\ListarProdutoUnitTest.cs" />
     <Compile Include="Produto\ObterProdutoUnitTest.cs" />
+    <Compile Include="Produto\TestDataBase.cs" />
+    <Compile Include="Produto\ProdutoUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

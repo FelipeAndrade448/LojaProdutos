@@ -1,7 +1,4 @@
-using LojaProduto.Presentation.Controllers.Base;
-using System.Net;
 using System.Web.Mvc;
-using System.Web.Routing;
 
 namespace LojaProduto.Presentation.Filters
 {
