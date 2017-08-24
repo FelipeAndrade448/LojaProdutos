@@ -26,4 +26,9 @@ namespace LojaProduto.Common
         Parcelado = 2,
         Invalido = 3
     }
+    public enum EnumTipoNotaFiscal
+    {
+        Entrada = 1,
+        Saida = 2
+    }
 }

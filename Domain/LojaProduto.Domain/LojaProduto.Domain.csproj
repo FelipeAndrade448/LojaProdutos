@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\ControleDeNotaFiscal.cs" />
     <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Entities\Fornecedor.cs" />
     <Compile Include="Entities\ItensPedidos.cs" />

@@ -25,3 +25,17 @@ C:\Users\felipe.andrade\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\
 C:\Users\felipe.andrade\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\SQFramework.Core.xml
 C:\Users\felipe.andrade\Source\Repos\LojaProdutos\Common\LojaProduto.Common\obj\Debug\LojaProduto.Common.dll
 C:\Users\felipe.andrade\Source\Repos\LojaProdutos\Common\LojaProduto.Common\obj\Debug\LojaProduto.Common.pdb
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\LojaProduto.Common.dll.config
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\LojaProduto.Common.dll
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\LojaProduto.Common.pdb
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\Common.Logging.Core.dll
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\Common.Logging.dll
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\SQFramework.Core.dll
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\Common.Logging.pdb
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\Common.Logging.xml
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\Common.Logging.Core.pdb
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\Common.Logging.Core.xml
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\bin\Debug\SQFramework.Core.xml
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\obj\Debug\LojaProduto.Common.csproj.CoreCompileInputs.cache
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\obj\Debug\LojaProduto.Common.dll
+C:\Users\felip\Source\Repos\LojaProdutos\Common\LojaProduto.Common\obj\Debug\LojaProduto.Common.pdb

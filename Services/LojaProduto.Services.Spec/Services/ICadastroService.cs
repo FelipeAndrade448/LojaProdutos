@@ -18,6 +18,9 @@ namespace LojaProduto.Services.Spec.Services
         DTOProduto AlterarCodigoBarra(int id, string codigoBarra);
 
         [OperationContract]
+        DTOProduto ObterProdutoProCodigoDeBarra(string codigoBarra);
+
+        [OperationContract]
         DTOProduto SalvarProduto(DTOProduto dto);
 
         [OperationContract]
@@ -148,5 +151,8 @@ namespace LojaProduto.Services.Spec.Services
 
         [OperationContract]
         void AumentaOuReduzQuantidadeItem(int idItemPedido, int quantidade);
+
+        [OperationContract]
+        DTOControleDeNotaFiscal SalvarNotaFiscal(DTOControleDeNotaFiscal dto);
     }
 }

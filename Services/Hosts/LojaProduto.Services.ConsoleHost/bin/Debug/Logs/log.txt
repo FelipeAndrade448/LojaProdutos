@@ -1873,3 +1873,156 @@ Error Number:207,State:1,Class:16
 2017-08-23 16:18:56,670 [6] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Invalid column name 'QuantidadeEmEstoque'.
 2017-08-23 16:18:56,675 [6] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Invalid column name 'QuantidadeEmEstoque'.
 2017-08-23 16:18:56,677 [6] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Invalid column name 'QuantidadeEmEstoque'.
+2017-08-24 10:05:04,355 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 10:05:04,669 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 10:18:45,250 [5] ERROR NHibernate.AdoNet.AbstractBatcher [(null)] - Could not execute query: SELECT this_.Id as Id6_0_, this_.CodigoProduto as CodigoPr2_6_0_, this_.Nome as Nome6_0_, this_.DataFabricacao as DataFabr4_6_0_, this_.DataVencimento as DataVenc5_6_0_, this_.PrecoProduto as PrecoPro6_6_0_, this_.ProdutoEmEstoque as ProdutoE7_6_0_, this_.CodigoBarra as CodigoBa8_6_0_, this_.CategoriaId as Categori9_6_0_, this_.FornecedorId as Fornece10_6_0_ FROM dbo.Produto this_
+System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   em NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+ClientConnectionId:b5007631-243a-4459-9bcd-30f1a0348edd
+Error Number:207,State:1,Class:16
+2017-08-24 10:18:45,948 [5] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+2017-08-24 10:18:45,964 [5] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+2017-08-24 10:18:45,972 [5] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+2017-08-24 10:19:30,053 [5] ERROR LojaProduto.Services.Impl.Services.ContextAspect [(null)] - Spring.Data.BadSqlGrammarException: Hibernate operation: could not execute query
+[ SELECT this_.Id as Id6_0_, this_.CodigoProduto as CodigoPr2_6_0_, this_.Nome as Nome6_0_, this_.DataFabricacao as DataFabr4_6_0_, this_.DataVencimento as DataVenc5_6_0_, this_.PrecoProduto as PrecoPro6_6_0_, this_.ProdutoEmEstoque as ProdutoE7_6_0_, this_.CodigoBarra as CodigoBa8_6_0_, this_.CategoriaId as Categori9_6_0_, this_.FornecedorId as Fornece10_6_0_ FROM dbo.Produto this_ ]
+[SQL: SELECT this_.Id as Id6_0_, this_.CodigoProduto as CodigoPr2_6_0_, this_.Nome as Nome6_0_, this_.DataFabricacao as DataFabr4_6_0_, this_.DataVencimento as DataVenc5_6_0_, this_.PrecoProduto as PrecoPro6_6_0_, this_.ProdutoEmEstoque as ProdutoE7_6_0_, this_.CodigoBarra as CodigoBa8_6_0_, this_.CategoriaId as Categori9_6_0_, this_.FornecedorId as Fornece10_6_0_ FROM dbo.Produto this_]; bad SQL grammar [SELECT this_.Id as Id6_0_, this_.CodigoProduto as CodigoPr2_6_0_, this_.Nome as Nome6_0_, this_.DataFabricacao as DataFabr4_6_0_, this_.DataVencimento as DataVenc5_6_0_, this_.PrecoProduto as PrecoPro6_6_0_, this_.ProdutoEmEstoque as ProdutoE7_6_0_, this_.CodigoBarra as CodigoBa8_6_0_, this_.CategoriaId as Categori9_6_0_, this_.FornecedorId as Fornece10_6_0_ FROM dbo.Produto this_]; Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido. ---> System.Data.SqlClient.SqlException: Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   em NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   em NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   em NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   em NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   em NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters, IResultTransformer forcedResultTransformer)
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em Spring.Data.NHibernate.Generic.HibernateTemplate.ExecuteFind[T](IFindHibernateCallback`1 action, Boolean exposeNativeSession) na c:\_prj\spring-net\src\Spring\Spring.Data.NHibernate\Data\NHibernate\Generic\HibernateTemplate.cs:linha 1236
+   em Spring.Data.NHibernate.Generic.HibernateTemplate.LoadAll[T]() na c:\_prj\spring-net\src\Spring\Spring.Data.NHibernate\Data\NHibernate\Generic\HibernateTemplate.cs:linha 703
+   em SQFramework.Spring.Data.Hibernate.RepositoryBase`1.ListAll()
+   em LojaProduto.Services.Impl.Services.CadastroService.ListarProdutos() na C:\Users\felip\Source\Repos\LojaProdutos\Services\LojaProduto.Services.Impl\Services\CadastroService.cs:linha 490
+   em _dynamic_LojaProduto.Services.Impl.Services.CadastroService.ListarProdutos(Object , Object[] )
+   em Spring.Reflection.Dynamic.SafeMethod.Invoke(Object target, Object[] arguments) na c:\_prj\spring-net\src\Spring\Spring.Core\Reflection\Dynamic\DynamicMethod.cs:linha 162
+   em Spring.Aop.Framework.DynamicMethodInvocation.InvokeJoinpoint() na c:\_prj\spring-net\src\Spring\Spring.Aop\Aop\Framework\DynamicMethodInvocation.cs:linha 109
+   em Spring.Aop.Framework.AbstractMethodInvocation.Proceed() na c:\_prj\spring-net\src\Spring\Spring.Aop\Aop\Framework\AbstractMethodInvocation.cs:linha 266
+   em Spring.Transaction.Interceptor.TransactionInterceptor.Invoke(IMethodInvocation invocation) na c:\_prj\spring-net\src\Spring\Spring.Data\Transaction\Interceptor\TransactionInterceptor.cs:linha 79
+   em Spring.Aop.Framework.AbstractMethodInvocation.Proceed() na c:\_prj\spring-net\src\Spring\Spring.Aop\Aop\Framework\AbstractMethodInvocation.cs:linha 291
+   em SQFramework.Spring.Services.Aspects.ContextAspect.Invoke(IMethodInvocation invocation)
+2017-08-24 10:22:10,965 [7] ERROR NHibernate.AdoNet.AbstractBatcher [(null)] - Could not execute query: SELECT this_.Id as Id6_0_, this_.CodigoProduto as CodigoPr2_6_0_, this_.Nome as Nome6_0_, this_.DataFabricacao as DataFabr4_6_0_, this_.DataVencimento as DataVenc5_6_0_, this_.PrecoProduto as PrecoPro6_6_0_, this_.ProdutoEmEstoque as ProdutoE7_6_0_, this_.CodigoBarra as CodigoBa8_6_0_, this_.CategoriaId as Categori9_6_0_, this_.FornecedorId as Fornece10_6_0_ FROM dbo.Produto this_
+System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   em NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+ClientConnectionId:2d217adc-552a-49ab-b674-585a606f2eb9
+Error Number:207,State:1,Class:16
+2017-08-24 10:22:11,030 [7] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+2017-08-24 10:22:11,036 [7] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+2017-08-24 10:22:11,039 [7] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Nome de coluna 'ProdutoEmEstoque' inválido.
+Nome de coluna 'CodigoBarra' inválido.
+2017-08-24 14:49:14,596 [1] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type LojaProduto.Domain.Entities.ControleDeEstoque, LojaProduto.Domain.
+System.TypeLoadException: Não foi possível carregar o tipo LojaProduto.Domain.Entities.ControleDeEstoque do assembly LojaProduto.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+   em System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   em System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   em System.Reflection.Assembly.GetType(String name, Boolean throwOnError)
+   em NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2017-08-24 14:49:16,274 [1] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml ---> NHibernate.MappingException: persistent class LojaProduto.Domain.Entities.ControleDeEstoque, LojaProduto.Domain not found ---> System.TypeLoadException: Não foi possível carregar o tipo LojaProduto.Domain.Entities.ControleDeEstoque do assembly LojaProduto.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+   em System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   em System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   em System.Reflection.Assembly.GetType(String name, Boolean throwOnError)
+   em NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   em NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   em NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   em NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- Fim do rastreamento de pilha de exceções internas ---
+2017-08-24 14:49:16,280 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 14:49:16,289 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 14:53:16,133 [1] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type LojaProduto.Domain.Entities.ControleDeEstoque, LojaProduto.Domain.
+System.TypeLoadException: Não foi possível carregar o tipo LojaProduto.Domain.Entities.ControleDeEstoque do assembly LojaProduto.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+   em System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   em System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   em System.Reflection.Assembly.GetType(String name, Boolean throwOnError)
+   em NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2017-08-24 14:53:16,194 [1] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml ---> NHibernate.MappingException: persistent class LojaProduto.Domain.Entities.ControleDeEstoque, LojaProduto.Domain not found ---> System.TypeLoadException: Não foi possível carregar o tipo LojaProduto.Domain.Entities.ControleDeEstoque do assembly LojaProduto.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+   em System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   em System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   em System.Reflection.Assembly.GetType(String name, Boolean throwOnError)
+   em NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   em NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   em NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   em NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- Fim do rastreamento de pilha de exceções internas ---
+2017-08-24 14:53:16,200 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 14:53:16,206 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:06:43,073 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:06:43,117 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:11:09,354 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:11:09,397 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:13:51,205 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:13:51,249 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:15:43,910 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:15:43,967 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:20:39,254 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:20:39,321 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:27:47,142 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:27:47,191 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:28:48,957 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:28:49,016 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:34:15,952 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:34:18,437 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 15:37:05,234 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 15:37:05,286 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-08-24 16:30:49,271 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-08-24 16:30:49,330 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager

@@ -21,5 +21,17 @@ namespace LojaProduto.Services.UnitTest.Produto
             Assert.IsNotNull(alteracao);
             Assert.AreEqual("46546546545156", codigoAlterado);
         }
+        [TestCategory("Produto")]
+        [TestMethod]
+        public void ObterProdutoPorCodigoBarra()
+        {
+            var database = new TestDataBase();
+
+            var codigoBarra = "46546546545156";
+            var produto = database.PreencheProduto();
+            var alteracao = GetCadastroService().ObterProdutoProCodigoDeBarra(codigoBarra);
+
+            Assert.IsNotNull(produto);
+        }
     }
 }

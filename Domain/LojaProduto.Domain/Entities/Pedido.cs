@@ -121,6 +121,11 @@ namespace LojaProduto.Domain.Entities
             Save();
         }
 
+        public virtual void RetornaStatusPedido()
+        {
+            this.statusPedido = StatusPedido;
+        }
+
         //public virtual void AtualizaQuantidadeEstoque(ItensPedido itemPedido, int quantidade)
         //{
         //    if (quantidade > itemPedido.QuantidadeProduto)

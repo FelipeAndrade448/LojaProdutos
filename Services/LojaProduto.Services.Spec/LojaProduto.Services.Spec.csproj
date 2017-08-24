@@ -160,6 +160,7 @@
   <ItemGroup>
     <Compile Include="DataTransferObjects\DTOCategoria.cs" />
     <Compile Include="DataTransferObjects\DTOCliente.cs" />
+    <Compile Include="DataTransferObjects\DTOControleDeNotaFiscal.cs" />
     <Compile Include="DataTransferObjects\DTOEndereco.cs" />
     <Compile Include="DataTransferObjects\DTOFornecedor.cs" />
     <Compile Include="DataTransferObjects\DTOItensPedido.cs" />

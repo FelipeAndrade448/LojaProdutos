@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="CategoriaRepository.cs" />
     <Compile Include="ClienteRepository.cs" />
+    <Compile Include="ControleDeNotaFiscalRepository.cs" />
     <Compile Include="EnderecoRepository.cs" />
     <Compile Include="FornecedorRepository.cs" />
     <Compile Include="ItemPedidoRepository.cs" />
@@ -169,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mappings\Produto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\ControleDeEstoque.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

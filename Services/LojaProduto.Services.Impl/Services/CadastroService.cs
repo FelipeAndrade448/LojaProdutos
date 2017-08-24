@@ -15,6 +15,7 @@ namespace LojaProduto.Services.Impl.Services
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerSession)]
     public class CadastroService : ServiceBase, ICadastroService
     {
+        #region Categoria
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
         public byte[] ExportReportCategoria(ReportViewerHelper.ReportType reportType, string orderProperty, bool orderAscending)
         {
@@ -22,135 +23,224 @@ namespace LojaProduto.Services.Impl.Services
 
             return ReportViewerHelper.ExportReport(reportType, @"Reports\Categoria.rdlc", items);
         }
-
         [Transaction(TransactionPropagation.Required)]
-        public DTOProduto AlterarCodigoBarra(int idProduto, string codigoBarra)
+        public DTOCategoria SalvarCategoria(DTOCategoria dto)
         {
-            if (String.IsNullOrEmpty(codigoBarra))
-                throw new Exception("Codigo de Barra inválido");
-
-            var produto = Produto.GetRepository().Get(idProduto);
-            produto.CodigoBarra = codigoBarra;
-
-            if (produto.Id > 0)
-                return SalvarProduto(produto.Transform<DTOProduto>());
-            else
-                throw new Exception("Produto Invalido");
-        }
-
-        [Transaction(TransactionPropagation.Required)]
-        public DTOProduto SalvarProduto(DTOProduto dto)
-        {
-            Produto produto = null;
-
-            var categoria = Categoria.GetRepository().Get(dto.Categoria.Id);
-            var fornecedor = Fornecedor.GetRepository().Get(dto.Fornecedor.Id);
+            Categoria categoria = null;
 
             if (dto.Id > 0)
             {
-                produto = Produto.GetRepository().Get(dto.Id);
+                categoria = Categoria.GetRepository().Get(dto.Id);
 
-                if (produto == null)
-                    throw new Exception("Produto não encontrado(a)!");
+                if (categoria == null)
+                    throw new Exception("Categoria não encontrado(a)!");
 
-                dto.Transform<Produto>(produto);
-
-                produto.SetCategoria(categoria);
-                produto.SetFornecedor(fornecedor);
+                dto.Transform<Categoria>(categoria);
             }
             else
             {
-                produto = new Produto(categoria, fornecedor);
-                dto.Transform<Produto>(produto);
+                categoria = dto.Transform<Categoria>();
             }
 
-            produto.Save();
+            categoria.Save();
 
-            return produto.Transform<DTOProduto>();
+            return categoria.Transform<DTOCategoria>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public DTOProduto ObterProduto(int id)
+        public DTOCategoria ObterCategoria(int id)
         {
-            return Produto.GetRepository().Get(id).Transform<DTOProduto>();
+            return Categoria.GetRepository().Get(id).Transform<DTOCategoria>();
         }
 
         [Transaction(TransactionPropagation.Required)]
-        public void DeletarProduto(int id)
+        public void DeletarCategoria(int id)
         {
-            var item = Produto.GetRepository().Get(id);
+            var item = Categoria.GetRepository().Get(id);
             item.Delete();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public IList<DTOProduto> ListarProdutos()
+        public IList<DTOCategoria> ListarCategorias()
         {
-            return Produto.GetRepository().ListAll().TransformList<DTOProduto>();
+            return Categoria.GetRepository().ListAll().TransformList<DTOCategoria>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public PageMessage<DTOProduto> ListarProdutos(int startIndex, int pageSize, string orderProperty, bool orderAscending)
+        public PageMessage<DTOCategoria> ListarCategorias(int startIndex, int pageSize, string orderProperty, bool orderAscending)
         {
-            return Produto.GetRepository().ListarProdutos(startIndex, pageSize, orderProperty, orderAscending)
-                .Transform<PageMessage<DTOProduto>>();
+            return Categoria.GetRepository().ListarCategorias(startIndex, pageSize, orderProperty, orderAscending)
+                .Transform<PageMessage<DTOCategoria>>();
         }
+        #endregion
 
-
+        #region Cliente
         [Transaction(TransactionPropagation.Required)]
-        public DTOPedido SalvarPedido(DTOPedido dto)
+        public DTOCliente SalvarCliente(DTOCliente dto)
         {
-            Pedido pedido = null;
+            Cliente cliente = null;
 
-            var cliente = Cliente.GetRepository().Get(dto.Cliente.Id);
+            var endereco = Endereco.GetRepository().Get(dto.Endereco.Id);
 
             if (dto.Id > 0)
             {
-                pedido = Pedido.GetRepository().Get(dto.Id);
+                cliente = Cliente.GetRepository().Get(dto.Id);
 
-                if (pedido == null)
-                    throw new Exception("Pedido não encontrado(a)!");
+                if (cliente == null)
+                    throw new Exception("Cliente não encontrado(a)!");
 
-                dto.Transform<Pedido>(pedido);
+                dto.Transform<Cliente>(cliente);
 
-                pedido.SetCliente(cliente);
+                cliente.SetEndereco(endereco);
             }
             else
             {
-                pedido = new Pedido(cliente);
-                dto.Transform<Pedido>(pedido);
+                cliente = new Cliente(endereco);
+                dto.Transform<Cliente>(cliente);
             }
 
-            pedido.Save();
+            cliente.Save();
 
-            return pedido.Transform<DTOPedido>();
+            return cliente.Transform<DTOCliente>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public DTOPedido ObterPedido(int id)
+        public DTOCliente ObterCliente(int id)
         {
-            return Pedido.GetRepository().Get(id).Transform<DTOPedido>();
+            return Cliente.GetRepository().Get(id).Transform<DTOCliente>();
         }
 
         [Transaction(TransactionPropagation.Required)]
-        public void DeletarPedido(int id)
+        public void DeletarCliente(int id)
         {
-            var item = Pedido.GetRepository().Get(id);
+            var item = Cliente.GetRepository().Get(id);
             item.Delete();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public IList<DTOPedido> ListarPedidos()
+        public IList<DTOCliente> ListarClientes()
         {
-            return Pedido.GetRepository().ListAll().TransformList<DTOPedido>();
+            return Cliente.GetRepository().ListAll().TransformList<DTOCliente>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public PageMessage<DTOPedido> ListarPedidos(int startIndex, int pageSize, string orderProperty, bool orderAscending)
+        public PageMessage<DTOCliente> ListarClientes(int startIndex, int pageSize, string orderProperty, bool orderAscending)
         {
-            return Pedido.GetRepository().ListarPedidos(startIndex, pageSize, orderProperty, orderAscending)
-                .Transform<PageMessage<DTOPedido>>();
+            return Cliente.GetRepository().ListarClientes(startIndex, pageSize, orderProperty, orderAscending)
+                .Transform<PageMessage<DTOCliente>>();
+        }
+        #endregion
+
+        #region Endereco
+        [Transaction(TransactionPropagation.Required)]
+        public DTOEndereco SalvarEndereco(DTOEndereco dto)
+        {
+            Endereco endereco = null;
+
+            if (dto.Id > 0)
+            {
+                endereco = Endereco.GetRepository().Get(dto.Id);
+
+                if (endereco == null)
+                    throw new Exception("Endereco não encontrado(a)!");
+
+                dto.Transform<Endereco>(endereco);
+            }
+            else
+            {
+                endereco = dto.Transform<Endereco>();
+            }
+
+            endereco.Save();
+
+            return endereco.Transform<DTOEndereco>();
         }
 
+        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
+        public DTOEndereco ObterEndereco(int id)
+        {
+            return Endereco.GetRepository().Get(id).Transform<DTOEndereco>();
+        }
+
+        [Transaction(TransactionPropagation.Required)]
+        public void DeletarEndereco(int id)
+        {
+            var item = Endereco.GetRepository().Get(id);
+            item.Delete();
+        }
+
+        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
+        public IList<DTOEndereco> ListarEnderecos()
+        {
+            return Endereco.GetRepository().ListAll().TransformList<DTOEndereco>();
+        }
+
+        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
+        public PageMessage<DTOEndereco> ListarEnderecos(int startIndex, int pageSize, string orderProperty, bool orderAscending)
+        {
+            return Endereco.GetRepository().ListarEnderecos(startIndex, pageSize, orderProperty, orderAscending)
+                .Transform<PageMessage<DTOEndereco>>();
+        }
+        #endregion
+
+        #region Fornecedor
+        [Transaction(TransactionPropagation.Required)]
+        public DTOFornecedor SalvarFornecedor(DTOFornecedor dto)
+        {
+            Fornecedor fornecedor = null;
+
+            var endereco = Endereco.GetRepository().Get(dto.Endereco.Id);
+
+            if (dto.Id > 0)
+            {
+                fornecedor = Fornecedor.GetRepository().Get(dto.Id);
+
+                if (fornecedor == null)
+                    throw new Exception("Fornecedor não encontrado(a)!");
+
+                dto.Transform<Fornecedor>(fornecedor);
+
+                fornecedor.SetEndereco(endereco);
+            }
+            else
+            {
+                fornecedor = new Fornecedor(endereco);
+                dto.Transform<Fornecedor>(fornecedor);
+            }
+
+            fornecedor.Save();
+
+            return fornecedor.Transform<DTOFornecedor>();
+        }
+
+        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
+        public DTOFornecedor ObterFornecedor(int id)
+        {
+            return Fornecedor.GetRepository().Get(id).Transform<DTOFornecedor>();
+        }
+
+        [Transaction(TransactionPropagation.Required)]
+        public void DeletarFornecedor(int id)
+        {
+            var item = Fornecedor.GetRepository().Get(id);
+            item.Delete();
+        }
+
+        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
+        public IList<DTOFornecedor> ListarFornecedores()
+        {
+            return Fornecedor.GetRepository().ListAll().TransformList<DTOFornecedor>();
+        }
+
+        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
+        public PageMessage<DTOFornecedor> ListarFornecedores(int startIndex, int pageSize, string orderProperty, bool orderAscending)
+        {
+            return Fornecedor.GetRepository().ListarFornecedores(startIndex, pageSize, orderProperty, orderAscending)
+                .Transform<PageMessage<DTOFornecedor>>();
+        }
+        #endregion
+
+        #region ItensPedido
         [Transaction(TransactionPropagation.Required)]
         public DTOItensPedido SalvarItensPedido(DTOItensPedido dto)
         {
@@ -275,215 +365,142 @@ namespace LojaProduto.Services.Impl.Services
 
             pedido.EstornaPedido(itemPedido);
         }
+        #endregion
 
+        #region Pedido
         [Transaction(TransactionPropagation.Required)]
-        public DTOFornecedor SalvarFornecedor(DTOFornecedor dto)
+        public DTOPedido SalvarPedido(DTOPedido dto)
         {
-            Fornecedor fornecedor = null;
+            Pedido pedido = null;
 
-            var endereco = Endereco.GetRepository().Get(dto.Endereco.Id);
+            var cliente = Cliente.GetRepository().Get(dto.Cliente.Id);
 
             if (dto.Id > 0)
             {
-                fornecedor = Fornecedor.GetRepository().Get(dto.Id);
+                pedido = Pedido.GetRepository().Get(dto.Id);
 
-                if (fornecedor == null)
-                    throw new Exception("Fornecedor não encontrado(a)!");
+                if (pedido == null)
+                    throw new Exception("Pedido não encontrado(a)!");
 
-                dto.Transform<Fornecedor>(fornecedor);
+                dto.Transform<Pedido>(pedido);
 
-                fornecedor.SetEndereco(endereco);
+                pedido.SetCliente(cliente);
             }
             else
             {
-                fornecedor = new Fornecedor(endereco);
-                dto.Transform<Fornecedor>(fornecedor);
+                pedido = new Pedido(cliente);
+                dto.Transform<Pedido>(pedido);
             }
 
-            fornecedor.Save();
+            pedido.Save();
 
-            return fornecedor.Transform<DTOFornecedor>();
+            return pedido.Transform<DTOPedido>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public DTOFornecedor ObterFornecedor(int id)
+        public DTOPedido ObterPedido(int id)
         {
-            return Fornecedor.GetRepository().Get(id).Transform<DTOFornecedor>();
+            return Pedido.GetRepository().Get(id).Transform<DTOPedido>();
         }
 
         [Transaction(TransactionPropagation.Required)]
-        public void DeletarFornecedor(int id)
+        public void DeletarPedido(int id)
         {
-            var item = Fornecedor.GetRepository().Get(id);
+            var item = Pedido.GetRepository().Get(id);
             item.Delete();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public IList<DTOFornecedor> ListarFornecedores()
+        public IList<DTOPedido> ListarPedidos()
         {
-            return Fornecedor.GetRepository().ListAll().TransformList<DTOFornecedor>();
+            return Pedido.GetRepository().ListAll().TransformList<DTOPedido>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public PageMessage<DTOFornecedor> ListarFornecedores(int startIndex, int pageSize, string orderProperty, bool orderAscending)
+        public PageMessage<DTOPedido> ListarPedidos(int startIndex, int pageSize, string orderProperty, bool orderAscending)
         {
-            return Fornecedor.GetRepository().ListarFornecedores(startIndex, pageSize, orderProperty, orderAscending)
-                .Transform<PageMessage<DTOFornecedor>>();
+            return Pedido.GetRepository().ListarPedidos(startIndex, pageSize, orderProperty, orderAscending)
+                .Transform<PageMessage<DTOPedido>>();
+        }
+        #endregion
+
+        #region Produto
+        [Transaction(TransactionPropagation.Required)]
+        public DTOProduto AlterarCodigoBarra(int idProduto, string codigoBarra)
+        {
+            if (String.IsNullOrEmpty(codigoBarra))
+                throw new Exception("Codigo de Barra inválido");
+
+            var produto = Produto.GetRepository().Get(idProduto);
+            produto.CodigoBarra = codigoBarra;
+
+            if (produto.Id > 0)
+                return SalvarProduto(produto.Transform<DTOProduto>());
+            else
+                throw new Exception("Produto Invalido");
         }
 
         [Transaction(TransactionPropagation.Required)]
-        public DTOEndereco SalvarEndereco(DTOEndereco dto)
+        public DTOProduto ObterProdutoProCodigoDeBarra(string codigoBarra)
         {
-            Endereco endereco = null;
+            return Produto.GetRepository().Get(codigoBarra).Transform<DTOProduto>();
+        }
+
+        [Transaction(TransactionPropagation.Required)]
+        public DTOProduto SalvarProduto(DTOProduto dto)
+        {
+            Produto produto = null;
+
+            var categoria = Categoria.GetRepository().Get(dto.Categoria.Id);
+            var fornecedor = Fornecedor.GetRepository().Get(dto.Fornecedor.Id);
 
             if (dto.Id > 0)
             {
-                endereco = Endereco.GetRepository().Get(dto.Id);
+                produto = Produto.GetRepository().Get(dto.Id);
 
-                if (endereco == null)
-                    throw new Exception("Endereco não encontrado(a)!");
+                if (produto == null)
+                    throw new Exception("Produto não encontrado(a)!");
 
-                dto.Transform<Endereco>(endereco);
+                dto.Transform<Produto>(produto);
+
+                produto.SetCategoria(categoria);
+                produto.SetFornecedor(fornecedor);
             }
             else
             {
-                endereco = dto.Transform<Endereco>();
+                produto = new Produto(categoria, fornecedor);
+                dto.Transform<Produto>(produto);
             }
 
-            endereco.Save();
+            produto.Save();
 
-            return endereco.Transform<DTOEndereco>();
+            return produto.Transform<DTOProduto>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public DTOEndereco ObterEndereco(int id)
+        public DTOProduto ObterProduto(int id)
         {
-            return Endereco.GetRepository().Get(id).Transform<DTOEndereco>();
+            return Produto.GetRepository().Get(id).Transform<DTOProduto>();
         }
 
         [Transaction(TransactionPropagation.Required)]
-        public void DeletarEndereco(int id)
+        public void DeletarProduto(int id)
         {
-            var item = Endereco.GetRepository().Get(id);
+            var item = Produto.GetRepository().Get(id);
             item.Delete();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public IList<DTOEndereco> ListarEnderecos()
+        public IList<DTOProduto> ListarProdutos()
         {
-            return Endereco.GetRepository().ListAll().TransformList<DTOEndereco>();
+            return Produto.GetRepository().ListAll().TransformList<DTOProduto>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public PageMessage<DTOEndereco> ListarEnderecos(int startIndex, int pageSize, string orderProperty, bool orderAscending)
+        public PageMessage<DTOProduto> ListarProdutos(int startIndex, int pageSize, string orderProperty, bool orderAscending)
         {
-            return Endereco.GetRepository().ListarEnderecos(startIndex, pageSize, orderProperty, orderAscending)
-                .Transform<PageMessage<DTOEndereco>>();
-        }
-
-        [Transaction(TransactionPropagation.Required)]
-        public DTOCliente SalvarCliente(DTOCliente dto)
-        {
-            Cliente cliente = null;
-
-            var endereco = Endereco.GetRepository().Get(dto.Endereco.Id);
-
-            if (dto.Id > 0)
-            {
-                cliente = Cliente.GetRepository().Get(dto.Id);
-
-                if (cliente == null)
-                    throw new Exception("Cliente não encontrado(a)!");
-
-                dto.Transform<Cliente>(cliente);
-
-                cliente.SetEndereco(endereco);
-            }
-            else
-            {
-                cliente = new Cliente(endereco);
-                dto.Transform<Cliente>(cliente);
-            }
-
-            cliente.Save();
-
-            return cliente.Transform<DTOCliente>();
-        }
-
-        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public DTOCliente ObterCliente(int id)
-        {
-            return Cliente.GetRepository().Get(id).Transform<DTOCliente>();
-        }
-
-        [Transaction(TransactionPropagation.Required)]
-        public void DeletarCliente(int id)
-        {
-            var item = Cliente.GetRepository().Get(id);
-            item.Delete();
-        }
-
-        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public IList<DTOCliente> ListarClientes()
-        {
-            return Cliente.GetRepository().ListAll().TransformList<DTOCliente>();
-        }
-
-        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public PageMessage<DTOCliente> ListarClientes(int startIndex, int pageSize, string orderProperty, bool orderAscending)
-        {
-            return Cliente.GetRepository().ListarClientes(startIndex, pageSize, orderProperty, orderAscending)
-                .Transform<PageMessage<DTOCliente>>();
-        }
-
-        [Transaction(TransactionPropagation.Required)]
-        public DTOCategoria SalvarCategoria(DTOCategoria dto)
-        {
-            Categoria categoria = null;
-
-            if (dto.Id > 0)
-            {
-                categoria = Categoria.GetRepository().Get(dto.Id);
-
-                if (categoria == null)
-                    throw new Exception("Categoria não encontrado(a)!");
-
-                dto.Transform<Categoria>(categoria);
-            }
-            else
-            {
-                categoria = dto.Transform<Categoria>();
-            }
-
-            categoria.Save();
-
-            return categoria.Transform<DTOCategoria>();
-        }
-
-        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public DTOCategoria ObterCategoria(int id)
-        {
-            return Categoria.GetRepository().Get(id).Transform<DTOCategoria>();
-        }
-
-        [Transaction(TransactionPropagation.Required)]
-        public void DeletarCategoria(int id)
-        {
-            var item = Categoria.GetRepository().Get(id);
-            item.Delete();
-        }
-
-        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public IList<DTOCategoria> ListarCategorias()
-        {
-            return Categoria.GetRepository().ListAll().TransformList<DTOCategoria>();
-        }
-
-        [Transaction(TransactionPropagation.Required, ReadOnly = true)]
-        public PageMessage<DTOCategoria> ListarCategorias(int startIndex, int pageSize, string orderProperty, bool orderAscending)
-        {
-            return Categoria.GetRepository().ListarCategorias(startIndex, pageSize, orderProperty, orderAscending)
-                .Transform<PageMessage<DTOCategoria>>();
+            return Produto.GetRepository().ListarProdutos(startIndex, pageSize, orderProperty, orderAscending)
+                .Transform<PageMessage<DTOProduto>>();
         }
 
         [Transaction(TransactionPropagation.Required, ReadOnly = true)]
@@ -497,5 +514,33 @@ namespace LojaProduto.Services.Impl.Services
         {
             return Cliente.GetRepository().PesquisaCliente(cpf, codigo).Transform<DTOCliente>();
         }
+        #endregion
+
+        #region ControleDeNotaFiscal
+        [Transaction(TransactionPropagation.Required)]
+        public DTOControleDeNotaFiscal SalvarNotaFiscal(DTOControleDeNotaFiscal dto)
+        {
+            ControleDeNotaFiscal controleDeNotaFiscal = null;
+
+            if (dto.NumeroDaNF > 0)
+            {
+                controleDeNotaFiscal = ControleDeNotaFiscal.GetRepository().Get(dto.NumeroDaNF);
+
+                if (controleDeNotaFiscal == null)
+                    throw new Exception("Nota Fiscal não encontrado(a)!");
+
+                dto.Transform<ControleDeNotaFiscal>();
+            }
+            else
+            {
+                controleDeNotaFiscal = new ControleDeNotaFiscal();
+                dto.Transform<ControleDeNotaFiscal>();
+            }
+
+            controleDeNotaFiscal.Save();
+
+            return controleDeNotaFiscal.Transform<DTOControleDeNotaFiscal>();
+        }
+        #endregion
     }
 }
