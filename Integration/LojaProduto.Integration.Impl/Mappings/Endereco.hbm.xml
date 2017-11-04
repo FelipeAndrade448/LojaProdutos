@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="true" namespace="LojaProduto.Domain.Entities" assembly="LojaProduto.Domain">
     <class name="Endereco" table="dbo.Endereco" lazy="true">
 
-        <id name="id" column="Id" type="int" access="field" unsaved-value="0">
+        <id name="id" column="IDEndereco" type="int" access="field" unsaved-value="0">
             <generator class="identity" />
         </id>
 
@@ -14,11 +14,11 @@
         <property name="uf" column="Uf" type="string" access="field" not-null="false" length="2" />
 
         <bag name="clientes" cascade="all-delete-orphan" access="field" lazy="true" inverse="true">
-            <key column="EnderecoId" not-null="true" />
+            <key column="IDCliente" not-null="true" />
             <one-to-many class="Cliente" />
         </bag>
         <bag name="fornecedores" cascade="all-delete-orphan" access="field" lazy="true" inverse="true">
-            <key column="EnderecoId" not-null="true" />
+            <key column="IDFornecedor" not-null="true" />
             <one-to-many class="Fornecedor" />
         </bag>
 

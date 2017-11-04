@@ -2,19 +2,19 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="true" namespace="LojaProduto.Domain.Entities" assembly="LojaProduto.Domain">
     <class name="Produto" table="dbo.Produto" lazy="true">
 
-        <id name="id" column="Id" type="int" access="field" unsaved-value="0">
+        <id name="id" column="IdProduto" type="int" access="field" unsaved-value="0">
             <generator class="identity" />
         </id>
 
-        <property name="codigoProduto" column="CodigoProduto" type="string" access="field" not-null="true" length="10" />
-        <property name="nome" column="Nome" type="string" access="field" not-null="true" length="50" />
-        <property name="dataFabricacao" column="DataFabricacao" type="DateTime" access="field" not-null="true" />
-        <property name="dataVencimento" column="DataVencimento" type="DateTime" access="field" not-null="true" />
+        <property name="codigoProduto" column="CDProduto" type="string" access="field" not-null="true" length="10" />
+        <property name="nome" column="NMProduto" type="string" access="field" not-null="true" length="50" />
+        <property name="dataFabricacao" column="DTFabricacao" type="DateTime" access="field" not-null="true" />
+        <property name="dataVencimento" column="DTVencimento" type="DateTime" access="field" not-null="true" />
         <property name="precoProduto" column="PrecoProduto" type="decimal" access="field" not-null="true" />
-        <property name="quantidadeEmEstoque" column="ProdutoEmEstoque" type="int" access="field" not-null="true" />
-        <property name="codigoBarra" column="CodigoBarra" type="string" access="field" not-null="true" length="50" />
-        <many-to-one name="categoria" column="CategoriaId" access="field" class="Categoria" not-null="true" />
-        <many-to-one name="fornecedor" column="FornecedorId" access="field" class="Fornecedor" not-null="true" />
+        <property name="quantidadeEmEstoque" column="QTEstoque" type="int" access="field" not-null="true" />
+        <property name="codigoBarra" column="CDBarra" type="string" access="field" not-null="true" length="50" />
+        <many-to-one name="categoria" column="IDCategoria" access="field" class="Categoria" not-null="true" />
+        <many-to-one name="fornecedor" column="IDFornecedor" access="field" class="Fornecedor" not-null="true" />
 
     </class>
 </hibernate-mapping>

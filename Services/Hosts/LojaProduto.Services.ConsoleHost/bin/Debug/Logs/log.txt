@@ -2026,3 +2026,73 @@ NHibernate.MappingException: Could not compile the mapping document: LojaProduto
 2017-08-24 15:37:05,286 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
 2017-08-24 16:30:49,271 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
 2017-08-24 16:30:49,330 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-03 19:21:28,830 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-03 19:21:29,355 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 18:36:50,381 [1] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml ---> NHibernate.PropertyNotFoundException: Could not find property nor field 'Fornecedor' in class 'LojaProduto.Domain.Entities.ControleDeNotaFiscal'
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetGetter(Type theClass, String propertyName)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.GetPropertyType(Type containingType, String propertyName, String propertyAccess)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.BindCollection(ICollectionPropertiesMapping collectionMapping, Collection model, String className, String path, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.CreateBag(HbmBag bagMapping, String prefix, String path, PersistentClass owner, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.Create(ICollectionPropertiesMapping collectionMapping, String className, String propertyFullPath, PersistentClass owner, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   em NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- Fim do rastreamento de pilha de exceções internas ---
+2017-11-04 18:36:51,465 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 18:36:51,475 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 18:48:20,358 [1] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml ---> NHibernate.PropertyNotFoundException: Could not find property nor field 'Fornecedor' in class 'LojaProduto.Domain.Entities.ControleDeNotaFiscal'
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetGetter(Type theClass, String propertyName)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.GetPropertyType(Type containingType, String propertyName, String propertyAccess)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.BindCollection(ICollectionPropertiesMapping collectionMapping, Collection model, String className, String path, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.CreateBag(HbmBag bagMapping, String prefix, String path, PersistentClass owner, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.Create(ICollectionPropertiesMapping collectionMapping, String className, String propertyFullPath, PersistentClass owner, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   em NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- Fim do rastreamento de pilha de exceções internas ---
+2017-11-04 18:48:20,644 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 18:48:20,648 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 19:24:19,688 [1] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: LojaProduto.Integration.Impl.Mappings.ControleDeEstoque.hbm.xml ---> NHibernate.PropertyNotFoundException: Could not find property nor field 'Fornecedor' in class 'LojaProduto.Domain.Entities.ControleDeNotaFiscal'
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetField(Type type, String fieldName, Type originalType)
+   em NHibernate.Properties.FieldAccessor.GetGetter(Type theClass, String propertyName)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.GetPropertyType(Type containingType, String propertyName, String propertyAccess)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.BindCollection(ICollectionPropertiesMapping collectionMapping, Collection model, String className, String path, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.CreateBag(HbmBag bagMapping, String prefix, String path, PersistentClass owner, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.CollectionBinder.Create(ICollectionPropertiesMapping collectionMapping, String className, String propertyFullPath, PersistentClass owner, Type containingType, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   em NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   em NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   em NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- Fim do rastreamento de pilha de exceções internas ---
+2017-11-04 19:24:22,916 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 19:24:22,922 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:01:48,793 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:01:55,951 [1] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager

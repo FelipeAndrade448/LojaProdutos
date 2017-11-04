@@ -2,21 +2,21 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="true" namespace="LojaProduto.Domain.Entities" assembly="LojaProduto.Domain">
     <class name="Pedido" table="dbo.Pedido" lazy="true">
 
-        <id name="id" column="Id" type="int" access="field" unsaved-value="0">
+        <id name="id" column="IdPedido" type="int" access="field" unsaved-value="0">
             <generator class="identity" />
         </id>
 
-        <property name="codigo" column="Codigo" type="string" access="field" not-null="true" length="10" />
-        <property name="dataElaboracao" column="DataElaboracao" type="DateTime" access="field" not-null="true" />
-        <property name="valorTotalPedido" column="ValorTotalPedido" type="decimal" access="field" not-null="true" />
-        <property name="statusPedido" column="statusPedido" type="int" access="field" not-null="true" />
+        <property name="codigo" column="CDPedido" type="string" access="field" not-null="true" length="10" />
+        <property name="dataElaboracao" column="DTElaboracao" type="DateTime" access="field" not-null="true" />
+        <property name="valorTotalPedido" column="VLTotalPedido" type="decimal" access="field" not-null="true" />
+        <property name="statusPedido" column="Status" type="int" access="field" not-null="true" />
         <property name="tipoVenda" column="TipoVenda" type="int" access="field" not-null="true" />
         <property name="totalParcelas" column="TotalParcelas" type="decimal" access="field" not-null="true" />
 
-        <many-to-one name="cliente" column="ClienteId" access="field" class="Cliente" not-null="true" />
+        <many-to-one name="cliente" column="IDCliente" access="field" class="Cliente" not-null="true" />
 
         <bag name="itensPedidos" cascade="all" lazy="false" access="field" inverse="true">
-            <key column="PedidoId" not-null="true" />
+            <key column="IDItensPedido" not-null="true" />
             <one-to-many class="ItensPedido" />
         </bag>
 

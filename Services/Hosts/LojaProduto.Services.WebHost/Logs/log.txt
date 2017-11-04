@@ -322,3 +322,37 @@ NHibernate.LazyInitializationException: Initializing[LojaProduto.Domain.Entities
 NHibernate.LazyInitializationException: Initializing[LojaProduto.Domain.Entities.Cliente#5]-Could not initialize proxy - no Session.
 2017-08-07 09:57:55,456 [1] ERROR NHibernate.LazyInitializationException [(null)] - Initializing[LojaProduto.Domain.Entities.Cliente#5]-Could not initialize proxy - no Session.
 NHibernate.LazyInitializationException: Initializing[LojaProduto.Domain.Entities.Cliente#5]-Could not initialize proxy - no Session.
+2017-11-04 20:13:21,479 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:13:22,342 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:13:23,574 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:13:23,577 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:13:23,637 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:13:23,665 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:13:26,147 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:13:26,150 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:13:26,234 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:13:26,237 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:14:58,919 [10] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:14:58,924 [10] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:19:14,031 [24] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:19:14,093 [24] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:22:59,405 [24] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:22:59,433 [24] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:22:59,921 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:22:59,924 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:22:59,982 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:22:59,983 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:23:00,079 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:23:00,081 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:23:00,113 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:23:00,115 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:23:00,149 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:23:00,151 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:23:00,183 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:23:00,184 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:23:00,221 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:23:00,222 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:23:00,261 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:23:00,262 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager
+2017-11-04 20:24:34,803 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] -    GetObjectInternal: error obtaining object SessionFactory
+2017-11-04 20:24:34,811 [11] ERROR Spring.Objects.Factory.Support.DefaultListableObjectFactory [(null)] - GetObjectInternal: error obtaining object TransactionManager

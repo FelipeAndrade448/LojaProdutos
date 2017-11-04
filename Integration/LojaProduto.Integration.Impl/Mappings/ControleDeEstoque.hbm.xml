@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="true" namespace="LojaProduto.Domain.Entities" assembly="LojaProduto.Domain">
   <class name="ControleDeNotaFiscal" table="dbo.ControleDeNotaFiscal" lazy="true">
-    <id name="numeroDaNF" column="NumeroDaNF" type="int" access="field" unsaved-value="0"/>
-    <property name="dataDeLancamento" column="DataDeLancamento" type="DateTime" access="field" not-null="true"/>
-    <property name="fornecedor" column="Fornecedor" type="string" access="field" not-null="true" length="150" />
-    <property name="natureza" column="Natureza" type="string" access="field" not-null="true" length="50" />
-    <property name="valorDaNota" column="ValorDaNota" type="decimal" access="field" not-null="false" />
+    <id name="numeroDaNF" column="NumeroDaNF" type="int" access="field" unsaved-value="0"/>    
+    <property name="dataDeLancamento" column="DTLancamento" type="DateTime" access="field" not-null="true"/>
+    <property name="natureza" column="CDNatureza" type="int" access="field" not-null="true" length="50" />
+    <property name="valorDaNota" column="VLNota" type="decimal" access="field" not-null="false" />
     <property name="tipoDeNota" column="TipoDeNota" type="int" access="field" not-null="true"/>
+    
+    <bag name="fornecedor" cascade="all-delete-orphan" access="field" lazy="true" inverse="true">
+      <key column="IDFornecedor" not-null="true" />
+      <one-to-many class="Fornecedor" />
+    </bag>
     <bag name="pedido" cascade="all-delete-orphan" access="field" lazy="true" inverse="true">
-      <key column="PedidoId" not-null="true" />
+      <key column="IDPedido" not-null="true" />
       <one-to-many class="Pedido" />
     </bag>
   </class>

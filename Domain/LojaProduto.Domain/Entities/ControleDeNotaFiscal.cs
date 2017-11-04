@@ -16,7 +16,7 @@ namespace LojaProduto.Domain.Entities
 
         protected int numeroDaNF;
         protected DateTime dataDeLancamento;
-        protected string fornecedor;
+        protected Fornecedor fornecedor;
         protected IList<Pedido> pedido;
         protected string natureza;
         protected decimal valorDaNota;
@@ -24,7 +24,7 @@ namespace LojaProduto.Domain.Entities
 
         public virtual int NumeroDaNF { get { return numeroDaNF; } }
         public virtual DateTime DataDeLancamento { get { return dataDeLancamento; } set { dataDeLancamento = value; } }
-        public virtual string Fornecedor { get { return fornecedor; } set { fornecedor = value; } }
+        public virtual Fornecedor Fornecedor { get { return fornecedor; } set { fornecedor = value; } }
         public virtual IList<Pedido> Pedido { get { return pedido; } set { pedido = value; } }
         public virtual string Natureza { get { return natureza; } set { natureza = value; } }
         public virtual decimal ValorDaNota { get { return valorDaNota; } set { valorDaNota = value; } }
